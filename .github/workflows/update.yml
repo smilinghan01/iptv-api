@@ -1,0 +1,11 @@
+name: Update schedule
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC时间，对应北京时间 06:00 和 18:00
+    - cron: '0 10 * * *'
+    - cron: '0 22 * * *'
+jobs:
+  generate:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
